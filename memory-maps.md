@@ -1,24 +1,44 @@
+
 # Memory Maps
 
-2^20 = 1 MB
+A memory map is a diagram of the memory system that shows the address range and the memory modules installed in the system. It's used to illustrate the address range for each memory module and the amount of free space in the system.
 
-$$2^{20} = 1MB = 1024 KB = 1,048,576 bytes$$
+## Address Lines
 
-If we want 32 MB of memory, that is 32 ($$ 2^5$$) times 1 MB. This means that we need 25 (5 for 32 and 20 for a megaByte) address lines. This is because 32 MB = 2^5 x 2^20 = 2^25. This means that we need 25 address lines to address 32 MB of memory.
+The number of address lines required to address a given amount of memory is given by the formula:
 
-$$2^{30} = 1GB = 1024 MB = 1,073,741,824 bytes$$
+$2^n$ where $n$ is the number of address lines required.
 
-$$2^{40} = 1TB = 1024 GB = 1,099,511,627,776 bytes$$
+The number of address lines required to address a given amount of memory is calculated by taking the base 2 logarithm of the amount of memory.
 
-$$2^{50} = 1PB = 1024 TB = 1,125,899,906,842,624 bytes$$
+For example:
 
-## Example 1
+- If we want to address 1 byte of memory, we need 1 address line. This is because $2^1 = 2$, and 2 to the power of 1 equals 2. Thus, we need 1 address line to address 1 byte of memory.
+- If we want to address 1 KB of memory (1024 bytes), we need 10 address lines. This is because $2^{10} = 1024$, meaning we need 10 address lines to address 1 KB of memory.
 
-Memory Map for a system with 2GB capacity. Assume the system has 3 x 32MB memory modules residing at the bottom of memory.
+Additional calculations:
 
-Step 1: calculate full address range: 2GB = 2 * GB =  2^1 x 2^30 = 2^31. This means that we need 31 address lines.
+- $2^{20} = 1 \text{ MB} = 1024 \text{ KB} = 1,048,576 \text{ bytes}$
+- If we want 32 MB of memory, which is $2^5$ times 1 MB, we need 25 address lines (5 for 32 and 20 for a megabyte). This is because 32 MB = $2^5 \times 2^{20} = 2^{25}$, requiring 25 address lines to address 32 MB of memory.
 
-$$2^{31} = 2,147,483,648_{10} = 0x8000\;0000$$
+In general:
+
+- $2^{10} = 1 \text{ KB} = 1024 \text{ bytes}$
+- $2^{20} = 1 \text{ MB} = 1024 \text{ KB} = 1,048,576 \text{ bytes}$
+- $2^{30} = 1 \text{ GB} = 1024 \text{ MB} = 1,073,741,824 \text{ bytes}$
+- $2^{40} = 1 \text{ TB} = 1024 \text{ GB} = 1,099,511,627,776 \text{ bytes}$
+
+## Examples
+
+### Example 1
+
+Create a Memory Map for a system with 2GB capacity. Assume the system has 3 x 32MB memory modules residing at the bottom of memory.
+
+Step 1: calculate full address range:
+
+$2\text{ GB} &=& 2 * \text{GB} =  2^{1}*2^{30} = 2^{31}.$ This means that we need 31 address lines.
+
+$2^{31} = 2,147,483,648_{10} = \text{0x8000\;0000}$
 
 31 / 4 = 7 with a remainder of 3. This means that we need 7 hex digits to represent the address.This means that the address range is 0x0000 0000 to 0x7FFF FFFF.
 
@@ -50,4 +70,30 @@ Memory Map for a system with 4GB capacity. Assume the system has 2 x
 
 Step 1: calculate full address range: 4GB = 2^2 x 2^30 = 2^32. This means that we need 32 address lines.
 Range of addresses is 0000 0000 to FFFF FFFF
+
+## Example
+
+Memory Map for a system with 8GB capacity. Assume the system has 3 x 160MB memory modules residing at the bottom of memory, calculate the address range for each module and the amount of free space.
+
+Step 1: calculate full address range: 8GB = 8 * GB = 2^3 x 2^30 = 2^33. This means that we need 33 address lines.
+
+$$2^{33} = 8,589,934,592_{10} = 0x2000\;0000$$
+
+33 / 4 = 8 with a remainder of 1. This means that we need 8 hex digits to represent the address. This means that the address range is 0x0000 0000 to 0xFFFF FFFF.** dont trust this**
+
+Step 2: calculate the address range for the 3 x 160MB memory modules. Each module is 160MB = 160 * MB = 2^8 x 2^20 = 2^28. This means that we need 28 address lines to address 160MB of memory.
+
+$$2^{28} = 268,435,456_{10} = 0x1000\;0000$$
+
+28 / 4 = 7 with a remainder of 0. This means that we need 7 hex digits to represent the address. This means that the address range is 0x0000 0000 to 0x0FFF FFFF.
+
+The memory map for the system is as follows:
+
+0x000 0000 to 0x0FFF FFFF: 160MB module 1
+0x100 0000 to 0x1FFF FFFF: 160MB module 2
+0x200 0000 to 0x2FFF FFFF: 160MB module 3
+
+leaving
+
+0x300 0000 to 0xFFFF FFFF: 7,424MB of unused memory
 
