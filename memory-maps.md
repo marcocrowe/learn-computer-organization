@@ -14,13 +14,13 @@ The number of address lines required to address a given amount of memory is calc
 For example:
 
 - If we want to address 1 byte of memory, we need 1 address line. This is because $2^1 = 2$, and 2 to the power of 1 equals 2. Thus, we need 1 address line to address 1 byte of memory.
-- If we want to address 1 KB of memory (1024 bytes), we need 10 address lines. This is because $2^{10} = 1024$, meaning we need 10 address lines to address 1 KB of memory.
+- If we want to address 1 KB of memory (1,024 bytes), we need 10 address lines. This is because $2^{10} = 1,024$, meaning we need 10 address lines to address 1 KB of memory.
 
 Additional calculations:
 
 - $2^{20} = 1 \text{ MB} = 1024 \text{ KB} = 1,048,576 \text{ bytes}$
 - If we want 32 MB of memory, which is:
-  $32 * \text{MB} = 2^log_2(32) * 2^{20} = 2^5 * 2^{20} = 2^{25}$.
+  $32 * \text{MB} = 2^{log_2(32)} * 2^{20} = 2^5 * 2^{20} = 2^{25}$.
   This means that we need 25 address lines to address 32 MB of memory.
 
 ## Memory Sizes

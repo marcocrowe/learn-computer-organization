@@ -202,6 +202,158 @@ $7,712\text{ MB} = 7,712 * 2^{20} = 8,086,618,112_{10} = \text{0x0001 E200 0000}
   <tr><td bgcolor="#fbe5d5">0x0000 09FF FFFF<br/>Module 1<br/>0x0000 0000 0000</td></tr>
 </table>
 
+## Exercise 1
+
+A  video  game  console  has  a  memory  capacity  of  512  MB.  The memory is divided into 4 banks of equal size. Each bank consists of 2 chips,  with  each  chip  having  a  capacity  of  64  MB.  Draw  a  memory map that shows the location and size of each memory bank and chip.
+
+1. Find full range of addresses
+2. Find range of each chip.
+3. Build your map.
+
+Draw a memory map that shows the location and size of each memory bank.
+
+| Bank #   | Chip #   | Size  | Start Address | End Address |
+|----------|----------|-------|---------------|-------------|
+|          | `Chip 1` | 64 MB |               |             |
+| `Bank 3` | `Chip 0` | 64 MB |               |             |
+|          | `Chip 1` | 64 MB |               |             |
+| `Bank 2` | `Chip 0` | 64 MB |               |             |
+|          | `Chip 1` | 64 MB |               |             |
+| `Bank 1` | `Chip 0` | 64 MB |               |             |
+|          | `Chip 1` | 64 MB |               |             |
+| `Bank 0` | `Chip 0` | 64 MB |               |             |
+
+### Calculate full address range
+
+$512\text{ MB} = 512 * 1\text{ MB} =  512*2^{20} = 2^{log_2(512)}*2^{20} = 2^9*2^{20} = 2^{29} = 536, 870, 912_{10} = \text{0x2000 0000}$
+
+|   | start         | end           |                                        |
+|---|---------------|---------------|----------------------------------------|
+|   | `0x0000 0001` | `0x2000 0000` |                                        |
+| - | `0x0000 0001` | `0x0000 0001` | (Offset by 1 because index is 0 based) |
+|   | `0x0000 0000` | `0x1FFF FFFF` |                                        |
+
+### Calculate `Bank 0 - Chip 0` address range
+
+$64\text{ MB} = 64 * 1\text{ MB} =  2^6*2^{20} = 2^{(6+20)} = 2^{26} = 67, 108, 864_{10} = \text{0x0400 0000}$
+
+|   | start         | end           |                                        |
+|---|---------------|---------------|----------------------------------------|
+|   | `0x0000 0001` | `0x0400 0000` |                                        |
+| - | `0x0000 0001` | `0x0000 0001` | (Offset by 1 because index is 0 based) |
+|   | `0x0000 0000` | `0x03FF FFFF` |                                        |
+
+Address `Bank 0 - Chip 0` = `0x0000 0000` - `0x03FF FFFF`
+
+### Calculate `Bank 0 - Chip 1` address range
+
+`0x0000 0000` - `0x03FF FFFF` is taken, so add `0x03FF FFFF` to the address range
+
+|   | start         | end           |                                      |
+|---|---------------|---------------|--------------------------------------|
+|   | `0x0000 0001` | `0x0400 0000` |                                      |
+| + | `0x03FF FFFF` | `0x03FF FFFF` | (last address of `Bank 0 - Chip 0` ) |
+|   | `0x0400 0000` | `0x07FF FFFF` |                                      |
+
+Address `Bank 0 - Chip 1` = `0x0400 0000` - `0x07FF FFFF`
+
+### Calculate `Bank 1 - Chip 0` address range
+
+`0x0000 0000` - `0x07FF FFFF` is taken, so add `0x07FF FFFF` to the address range
+
+|   | start         | end           |                                      |
+|---|---------------|---------------|--------------------------------------|
+|   | `0x0000 0001` | `0x0400 0000` |                                      |
+| + | `0x07FF FFFF` | `0x07FF FFFF` | (last address of `Bank 0 - Chip 1` ) |
+|   | `0x0800 0000` | `0x0BFF FFFF` |                                      |
+
+Address `Bank 1 - Chip 0` = `0x0800 0000` - `0x0BFF FFFF`
+
+### Calculate `Bank 1 - Chip 1` address range
+
+`0x0000 0000` - `0x0BFF FFFF` is taken, so add `0x0BFF FFFF` to the address range
+
+|   | start         | end           |                                      |
+|---|---------------|---------------|--------------------------------------|
+|   | `0x0000 0001` | `0x0400 0000` |                                      |
+| + | `0x0BFF FFFF` | `0x0BFF FFFF` | (last address of `Bank 1 - Chip 0` ) |
+|   | `0x0C00 0000` | `0x0FFF FFFF` |                                      |
+
+Address `Bank 1 - Chip 1` = `0x0C00 0000` - `0x0FFF FFFF`
+
+### Calculate `Bank 2 - Chip 0` address range
+
+`0x0000 0000` - `0x0FFF FFFF` is taken, so add `0x0FFF FFFF` to the address range
+
+|   | start         | end           |                                      |
+|---|---------------|---------------|--------------------------------------|
+|   | `0x0000 0001` | `0x0400 0000` |                                      |
+| + | `0x0FFF FFFF` | `0x0FFF FFFF` | (last address of `Bank 1 - Chip 1` ) |
+|   | `0x1000 0000` | `0x13FF FFFF` |                                      |
+
+Address `Bank 2 - Chip 0` = `0x1000 0000` - `0x13FF FFFF`
+
+### Calculate `Bank 2 - Chip 1` address range
+
+`0x0000 0000` - `0x13FF FFFF` is taken, so add `0x13FF FFFF` to the address range
+
+|   | start         | end           |                                      |
+|---|---------------|---------------|--------------------------------------|
+|   | `0x0000 0001` | `0x0400 0000` |                                      |
+| + | `0x13FF FFFF` | `0x13FF FFFF` | (last address of `Bank 2 - Chip 0` ) |
+|   | `0x1400 0000` | `0x17FF FFFF` |                                      |
+
+Address `Bank 2 - Chip 1` = `0x1400 0000` - `0x17FF FFFF`
+
+### Calculate `Bank 3 - Chip 0` address range
+
+`0x0000 0000` - `0x17FF FFFF` is taken, so add `0x17FF FFFF` to the address range
+
+|   | start         | end           |                                      |
+|---|---------------|---------------|--------------------------------------|
+|   | `0x0000 0001` | `0x0400 0000` |                                      |
+| + | `0x17FF FFFF` | `0x17FF FFFF` | (last address of `Bank 2 - Chip 1` ) |
+|   | `0x1800 0000` | `0x1BFF FFFF` |                                      |
+
+Address `Bank 3 - Chip 0` = `0x1800 0000` - `0x1BFF FFFF`
+
+### Calculate `Bank 3 - Chip 1` address range
+
+`0x0000 0000` - `0x1BFF FFFF` is taken, so add `0x1BFF FFFF` to the address range
+
+|   | start         | end           |                                      |
+|---|---------------|---------------|--------------------------------------|
+|   | `0x0000 0001` | `0x0400 0000` |                                      |
+| + | `0x1BFF FFFF` | `0x1BFF FFFF` | (last address of `Bank 3 - Chip 0` ) |
+|   | `0x1C00 0000` | `0x1FFF FFFF` |                                      |
+
+Address `Bank 3 - Chip 1` = `0x1C00 0000` - `0x1FFF FFFF`
+
+### Answer
+
+|          |          |  Size | Start Address | End Address   |
+|----------|----------|------:|---------------|---------------|
+| `Bank 3` | `Chip 1` | 64 MB | `0x1C00 0000` | `0x1FFF FFFF` |
+|          | `Chip 0` | 64 MB | `0x1800 0000` | `0x1BFF FFFF` |
+| `Bank 2` | `Chip 1` | 64 MB | `0x1400 0000` | `0x17FF FFFF` |
+|          | `Chip 0` | 64 MB | `0x1000 0000` | `0x13FF FFFF` |
+| `Bank 1` | `Chip 1` | 64 MB | `0x0C00 0000` | `0x0FFF FFFF` |
+|          | `Chip 0` | 64 MB | `0x0800 0000` | `0x0BFF FFFF` |
+| `Bank 0` | `Chip 1` | 64 MB | `0x0400 0000` | `0x07FF FFFF` |
+|          | `Chip 0` | 64 MB | `0x0000 0000` | `0x03FF FFFF` |
+
+<table>
+  <tr><td bgcolor="#e2efd9">0x1FFF FFFF<br/>&nbsp;<br/>&nbsp;<br/>Bank 3 - Chip 1<br/>&nbsp;<br/>&nbsp;<br/>0x1C00 0000</td></tr>
+  <tr><td bgcolor="#a5a5a5">0x17FF FFFF<br/>Bank 3 - Chip 0<br/>0x1800 0000</td></tr>
+  <tr><td bgcolor="#4672c4">0x13FF FFFF<br/>Bank 2 - Chip 1<br/>0x1400 0000</td></tr>
+  <tr><td bgcolor="#fbe5d5">0x0FFF FFFF<br/>Bank 2 - Chip 0<br/>0x1000 0000</td></tr>
+  <tr><td bgcolor="#e2efd9">0x0BFF FFFF<br/>&nbsp;<br/>&nbsp;<br/>Bank 1 - Chip 1<br/>&nbsp;<br/>&nbsp;<br/>0x0C00 0000</td></tr>
+  <tr><td bgcolor="#a5a5a5">0x07FF FFFF<br/>Bank 1 - Chip 0<br/>0x0800 0000</td></tr>
+  <tr><td bgcolor="#4672c4">0x03FF FFFF<br/>Bank 0 - Chip 1<br/>0x0400 0000</td></tr>
+  <tr><td bgcolor="#fbe5d5">0x0000 0000<br/>Bank 0 - Chip 0<br/>0x0000 0000</td></tr>
+  </table>
+
+
 ## Exercise 3
 
 A computer system has a memory with a capacity of 2 GB. The memory is divided into 4 banks, each with a different size.
@@ -269,7 +421,7 @@ Address `Bank 1` = 0x2000 0000 - 0x4FFF FFFF
 
 ### Calculate `Bank 2` address range
 
-$256\text{ MB} = 256 * 1\text{ MB} =  2^8*2^{20} = 2^{(8+20)} = \\ 2^{28} = 268, 435, 456_{10} = \text{0x1000 0000}$
+$256\text{ MB} = 256 * 1\text{ MB} = 2^{log_2(256)} * 2^{20} = 2^8*2^{20} = 2^{(8+20)} = \\ 2^{28} = 268, 435, 456_{10} = \text{0x1000 0000}$
 
 `0x0000 0000` - `0x4FFF FFFF` is taken, so add `0x4FFF FFFF` to the address range
 
@@ -283,7 +435,7 @@ Address `Bank 2` = `0x5000 0000` - `0x5FFF FFFF`
 
 ### Calculate `Bank 3` address range
 
-$512\text{ MB} = 512 * 1\text{ MB} =  2^9*2^{20} = 2^{(9+20)} = \\ 2^{29} = 536, 870, 912_{10} = \text{0x2000 0000}$
+$512\text{ MB} = 512 * 1\text{ MB} = 2^{log_2(512)} * 2^{20} = 2^9*2^{20} = 2^{(9+20)} = \\ 2^{29} = 536, 870, 912_{10} = \text{0x2000 0000}$
 
 `0x0000 0000` - `0x5FFF FFFF` is taken, so add `0x5FFF FFFF` to the address range
 
