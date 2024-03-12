@@ -7,6 +7,7 @@ This repository contains the notes and resources for the course Computer Organiz
 
 - [Memory Maps](./memory-maps.md "Memory Maps")
 - [Memory Maps - exercises](./memory-maps-exercises.md "Memory Maps - exercises")
+- [Memory Interleaving - exercises](./memory-interleaving-exercises.md "Memory Interleaving - exercises")
 
 ## Tools Used
 
