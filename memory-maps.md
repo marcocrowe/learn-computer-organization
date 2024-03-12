@@ -32,16 +32,34 @@ Additional calculations:
 
 ## Converting To Hexadecimal
 
-If you have a power of 2, you can convert it to hex by dividing the power by 4. This gives you the number of hex digits required to represent the address.
+> Division Rule and terms: Dividend / Divisor = Quotient + Remainder / Divisor
+> Dividend / Divisor = Quotient
+> Dividend % Divisor = Remainder
 
-To convert $2^{31}$ to hex, we need to divide 31 by 4. This gives us 7 with a remainder of 3. Taking the remainder and using it as an exponent of 2 gives us $2^3 = 8$ followed by 7 hex digits (0s) = 0x8000 0000.
+If you have a number expressed as `2` to the power of `n`, you can convert it to hexadecimal by dividing the power `n` by `4` and using the `remainder` as the exponent of `2` multiplied the `quotient` as the exponent of `0x10`.
 
-This trick works because dividing any number by 4 gives a remainder of [0, 1, 2 or 3]
+$2^{n} = 2^r * \text{0x10}^q$
 
-$2^3 = 8 \\ 2^2=4 \\ 2^1=2 \\ 2^0=1$
+Why does this work?
 
-A $2^4$ would give a $16_{10}$ = 0x10
+### Example 1: What is $2^{10}$ expressed in hexadecimal?
+
+Note: $2^4 = 16_{10} = \text{0x10}$
+
+$2^{10} = 2^2 * 2^4 * 2^4 = 2^2 * (2^4)^{2} = 4 * \text{0x10}^2 = 4 * \text{0x100} = \text{0x400}$
+
+Now using the quick trick:
+
+For $2^{10} \\ q = 10/4 = 2 \\ r = 10 \mod 2 = 2 \\ 2^r * \text{0x10}^q = 2^2 * \text{0x10}^2 =  4 * \text{0x10}^2 = 4 * \text{0x100}= \text{0x400}$
+
+### Example 2: What is $2^{18}$  expressed in hexadecimal?
+
+$2^{18} = 2^2 * 2^4 * 2^4 * 2^4 = 2^2 * (2^4)^{3} = 4 * \text{0x10}^3 = 4 * \text{0x1000} = \text{0x4000}$
+
+Now using the quick trick:
+
+For $2^{18} \\ q = 18/4 = 4 \\ r = 18 \mod 4 = 2 \\ 2^r * \text{0x10}^q = 2^2 * \text{0x10}^4 =  4 * \text{0x10}^4 = 4 * \text{0x1000}= \text{0x4000}$
+
+## Exercises
 
 [Example Exercise](./memory-maps-exercises.md "Memory Maps - exercises")
-
-![1710166707411](image/memory-maps/memory-bank.png)
