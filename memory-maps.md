@@ -19,81 +19,29 @@ For example:
 Additional calculations:
 
 - $2^{20} = 1 \text{ MB} = 1024 \text{ KB} = 1,048,576 \text{ bytes}$
-- If we want 32 MB of memory, which is $2^5$ times 1 MB, we need 25 address lines (5 for 32 and 20 for a megabyte). This is because 32 MB = $2^5 \times 2^{20} = 2^{25}$, requiring 25 address lines to address 32 MB of memory.
+- If we want 32 MB of memory, which is:
+  $32 * \text{MB} = 2^log_2(32) * 2^{20} = 2^5 * 2^{20} = 2^{25}$.
+  This means that we need 25 address lines to address 32 MB of memory.
 
-In general:
+## Memory Sizes
 
-- $2^{10} = 1 \text{ KB} = 1024 \text{ bytes}$
-- $2^{20} = 1 \text{ MB} = 1024 \text{ KB} = 1,048,576 \text{ bytes}$
-- $2^{30} = 1 \text{ GB} = 1024 \text{ MB} = 1,073,741,824 \text{ bytes}$
-- $2^{40} = 1 \text{ TB} = 1024 \text{ GB} = 1,099,511,627,776 \text{ bytes}$
+- $1 \text{ KB} = 2^{10} = 1024 \text{ bytes}$
+- $1 \text{ MB} = 2^{20} = 1024 \text{ KB} = 1,048,576 \text{ bytes}$
+- $1 \text{ GB} = 2^{30} = 1024 \text{ MB} = 1,073,741,824 \text{ bytes}$
+- $1 \text{ TB} = 2^{40} = 1024 \text{ GB} = 1,099,511,627,776 \text{ bytes}$
 
-## Examples
+## Converting To Hexadecimal
 
-### Example 1
+If you have a power of 2, you can convert it to hex by dividing the power by 4. This gives you the number of hex digits required to represent the address.
 
-Create a Memory Map for a system with 2GB capacity. Assume the system has 3 x 32MB memory modules residing at the bottom of memory.
+To convert $2^{31}$ to hex, we need to divide 31 by 4. This gives us 7 with a remainder of 3. Taking the remainder and using it as an exponent of 2 gives us $2^3 = 8$ followed by 7 hex digits (0s) = 0x8000 0000.
 
-Step 1: calculate full address range:
+This trick works because dividing any number by 4 gives a remainder of [0, 1, 2 or 3]
 
-$2\text{ GB} &=& 2 * \text{GB} =  2^{1}*2^{30} = 2^{31}.$ This means that we need 31 address lines.
+$2^3 = 8 \\ 2^2=4\\2^1=2\\2^0=1$
 
-$2^{31} = 2,147,483,648_{10} = \text{0x8000\;0000}$
+A $2^4$ would give a $16_{10}$ = 0x10
 
-31 / 4 = 7 with a remainder of 3. This means that we need 7 hex digits to represent the address.This means that the address range is 0x0000 0000 to 0x7FFF FFFF.
+[Example Exercise](./memory-maps-exercises.md "Memory Maps - exercises")
 
-Step 2: calculate the address range for the 3 x 32MB memory modules. Each module is 32MB = 32 * MB = 2^5 x 2^20 = 2^25. This means that we need 25 address lines to address 32MB of memory.
-
-$$2^{25} = 33,554,432_{10} = 0x200\;0000$$
-
-25 / 4 = 6 with a remainder of 1. This means that we need 6 hex digits to represent the address. This means that the address range is 0x000 0000 to 0x1FF FFFF.
-
-Because we start addressing at `0x000 0000` the first module will be addressed from `0x000 0000` to `0x01FF FFFF`. The second module will be addressed from `0x200 0000` to `0x3FF FFFF`. The third module will be addressed from `0x400 0000` to `0x5FF FFFF`.
-
-Step 3
-
-Step 3: How much free space?
-2 GB = 2048 MB
-2048 MB – 96 MB = 1952 MB
-
-The memory map for the system is as follows:
-
-0x0,000,000 to 0x1,FFF,FFF: 32MB module 1
-0x2,000,000 to 0x3,FFF,FFF: 32MB module 2
-0x4,000,000 to 0x5,FFF,FFF: 32MB module 3
-0x6,000,000 to 0x7,FFF,FFF: 1,920MB of unused memory
-
-## Example 2
-
-Memory Map for a system with 4GB capacity. Assume the system has 2 x
-256MB memory modules residing at the bottom of memory
-
-Step 1: calculate full address range: 4GB = 2^2 x 2^30 = 2^32. This means that we need 32 address lines.
-Range of addresses is 0000 0000 to FFFF FFFF
-
-## Example
-
-Memory Map for a system with 8GB capacity. Assume the system has 3 x 160MB memory modules residing at the bottom of memory, calculate the address range for each module and the amount of free space.
-
-Step 1: calculate full address range: 8GB = 8 * GB = 2^3 x 2^30 = 2^33. This means that we need 33 address lines.
-
-$$2^{33} = 8,589,934,592_{10} = 0x2000\;0000$$
-
-33 / 4 = 8 with a remainder of 1. This means that we need 8 hex digits to represent the address. This means that the address range is 0x0000 0000 to 0xFFFF FFFF.** dont trust this**
-
-Step 2: calculate the address range for the 3 x 160MB memory modules. Each module is 160MB = 160 * MB = 2^8 x 2^20 = 2^28. This means that we need 28 address lines to address 160MB of memory.
-
-$$2^{28} = 268,435,456_{10} = 0x1000\;0000$$
-
-28 / 4 = 7 with a remainder of 0. This means that we need 7 hex digits to represent the address. This means that the address range is 0x0000 0000 to 0x0FFF FFFF.
-
-The memory map for the system is as follows:
-
-0x000 0000 to 0x0FFF FFFF: 160MB module 1
-0x100 0000 to 0x1FFF FFFF: 160MB module 2
-0x200 0000 to 0x2FFF FFFF: 160MB module 3
-
-leaving
-
-0x300 0000 to 0xFFFF FFFF: 7,424MB of unused memory
-
+![1710166707411](image/memory-maps/memory-bank.png)

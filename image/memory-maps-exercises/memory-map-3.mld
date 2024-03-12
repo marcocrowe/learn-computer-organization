@@ -1,0 +1,56 @@
+%YAML 1.1
+---
+defaults:
+  # Layout options
+  unit_size: 0x10000000  # 256MB
+  unit_height: .6
+  min_height: .6
+  max_height: 4.8
+  region_width: 2
+
+  # Presentation options
+  background: "#fff"
+  fill: "#C7E3EC"
+  outline: "#000"
+
+  # Address labels
+  address_format: c8
+  size_format: human
+
+layout:
+  0x00000000:
+    fill: "#fbe5d5"
+    size: 0x20000000  # 512 MB
+    label: "512 MB"
+    labels:
+      "tl": "Bank 0"
+  0x20000000:
+    fill: "#4672c4"
+    size: 0x30000000  # 768 MB
+    label: "768 MB"
+    labels:
+      "tl": "Bank 1"
+  0x50000000:
+    fill: "#a5a5a5"
+    size: 0x10000000  # 256 MB
+    label: "256 MB"
+    labels:
+      "tl": "Bank 2"
+  0x60000000:
+    fill: "#e2efd9"
+    size: 0x20000000  # 512 MB
+    label: "512 MB"
+    labels:
+      "tl": "Bank 3"
+
+automatic:
+  discontinuities:
+    fill: "#fff"
+    style: cut-out
+  addresses:
+    side: right
+    start: true
+    end: true
+    size: false
+    final_end: true
+    end_exclusive: false

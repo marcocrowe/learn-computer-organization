@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0.00in 0.00in 3.71in 5.05in" width="3.71in" height="5.05in">
+<defs>
+    <style type="text/css">
+        
+        text {
+            font-family: Optima, Rachana, Sawasdee, sans-serif;
+        }
+    </style>
+</defs>
+<g transform="matrix(1.000000 0.000000 0.000000 1.000000 12.000000 12.000000)">
+  <rect x="-0.125in" y="-0.125in" width="3.715in" height="5.050in" fill="#fff"/>
+  <rect x="0in" y="0in" width="2in" height="1.200in" fill="#e2efd9" stroke="#000" stroke-width="0.028in"/>
+  <rect x="0in" y="1.200in" width="2in" height="0.600in" fill="#a5a5a5" stroke="#000" stroke-width="0.028in"/>
+  <rect x="0in" y="1.800in" width="2in" height="1.800in" fill="#4672c4" stroke="#000" stroke-width="0.028in"/>
+  <rect x="0in" y="3.600in" width="2in" height="1.200in" fill="#fbe5d5" stroke="#000" stroke-width="0.028in"/>
+  <g>
+    <text x="0.050in" y="0.050in" style="dominant-baseline: hanging;">Bank 3</text>
+    <text x="1in" y="0.600in" style="text-anchor: middle; dominant-baseline: middle;">512 MB</text>
+    <text x="2.090in" y="1.150in">0x6000 0000</text>
+    <text x="2.090in" y="0.050in" style="dominant-baseline: hanging;">0x7FFF FFFF</text>
+    <text x="0.050in" y="1.250in" style="dominant-baseline: hanging;">Bank 2</text>
+    <text x="1in" y="1.500in" style="text-anchor: middle; dominant-baseline: middle;">256 MB</text>
+    <text x="2.090in" y="1.750in">0x5000 0000</text>
+    <text x="2.090in" y="1.250in" style="dominant-baseline: hanging;">0x5FFF FFFF</text>
+    <text x="0.050in" y="1.850in" style="dominant-baseline: hanging;">Bank 1</text>
+    <text x="1in" y="2.700in" style="text-anchor: middle; dominant-baseline: middle;">768 MB</text>
+    <text x="2.090in" y="3.550in">0x2000 0000</text>
+    <text x="2.090in" y="1.850in" style="dominant-baseline: hanging;">0x4FFF FFFF</text>
+    <text x="0.050in" y="3.650in" style="dominant-baseline: hanging;">Bank 0</text>
+    <text x="1in" y="4.200in" style="text-anchor: middle; dominant-baseline: middle;">512 MB</text>
+    <text x="2.090in" y="4.750in">0x0000 0000</text>
+    <text x="2.090in" y="3.650in" style="dominant-baseline: hanging;">0x1FFF FFFF</text>
+  </g>
+</g>
+
+</svg>

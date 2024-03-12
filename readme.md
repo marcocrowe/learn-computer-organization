@@ -15,4 +15,10 @@ This repository contains the notes and resources for the course Computer Organiz
 - [Control Unit](./control-unit.md)
 - [Microprogrammed Control](./microprogrammed-control.md)
 - [Computer Organization and Assembly Language](./computer-organization-and-assembly-language.md)-->
-- [memory-maps](./memory-maps.md)
+- [Memory Maps](./memory-maps.md "Memory Maps")
+- [Memory Maps - exercises](./memory-maps-exercises.md "Memory Maps - exercises")
+
+## Tools Used
+
+- [LinkerScope](https://github.com/raulgotor/linkerscope?tab%3Dreadme-ov-file#creating-a-configuration-file "LinkerScope") - A Python tool to visualize memory maps and linker scripts.
+- [Memory layout diagrams](https://github.com/gerph/memory-layout-diagram "Memory layout diagrams") - A Python tool to visualize memory maps.

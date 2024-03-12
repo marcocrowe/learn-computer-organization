@@ -1,0 +1,59 @@
+
+digraph memory {
+    ranksep = 0;
+    nodesep = 0;
+    graph [
+        pad = 0.125;
+        bgcolor = "#ffffff";
+    ];
+    node [
+        shape=rect,
+        penwidth=2,
+        fontname="Optima, Rachana, Sawasdee, sans-serif",
+        fontsize = 12
+    ];
+    edge [
+        fontname="Optima, Rachana, Sawasdee, sans-serif",
+        style=invis
+    ];
+
+    {
+        rank = same;
+        region60000000;
+        region60000000right [ label=<<table cellborder="0" cellspacing="0" cellpadding="2" border="0" fixedsize="false" color="blue" height="86.40" width="144.00"><tr><td colspan="3" align="left" valign="top" width="144" height="43.199999999999996">0x7FFF FFFF</td></tr><tr><td colspan="3" align="left" valign="bottom" width="144" height="43.199999999999996">0x6000 0000</td></tr></table>> labelloc=c, labeljust=c, shape=none ];
+    }
+    region60000000 [ width=2.00, height=1.20, fixedsize=true ];
+    region60000000 [ label=<<table cellborder="0" cellspacing="0" cellpadding="2" border="0" fixedsize="false" color="blue" height="86.40" width="144.00"><tr><td colspan="3" align="left" valign="top" width="144" height="43.199999999999996">Bank 3</td></tr><tr><td colspan="3" align="center" valign="middle" width="144" height="43.199999999999996">512 MB</td></tr></table>> labelloc=c labeljust=c ];
+    region60000000 [ fillcolor="#e2efd9", color="#000000", penwidth="2.0", style="filled" ];
+
+    {
+        rank = same;
+        region50000000;
+        region50000000right [ label=<<table cellborder="0" cellspacing="0" cellpadding="2" border="0" fixedsize="false" color="blue" height="43.20" width="144.00"><tr><td colspan="3" align="left" valign="top" width="144" height="21.599999999999998">0x5FFF FFFF</td></tr><tr><td colspan="3" align="left" valign="bottom" width="144" height="21.599999999999998">0x5000 0000</td></tr></table>> labelloc=c, labeljust=c, shape=none ];
+    }
+    region50000000 [ width=2.00, height=0.60, fixedsize=true ];
+    region50000000 [ label=<<table cellborder="0" cellspacing="0" cellpadding="2" border="0" fixedsize="false" color="blue" height="43.20" width="144.00"><tr><td colspan="3" align="left" valign="top" width="144" height="21.599999999999998">Bank 2</td></tr><tr><td colspan="3" align="center" valign="middle" width="144" height="21.599999999999998">256 MB</td></tr></table>> labelloc=c labeljust=c ];
+    region50000000 [ fillcolor="#a5a5a5", color="#000000", penwidth="2.0", style="filled" ];
+    region60000000 -> region50000000;
+
+    {
+        rank = same;
+        region20000000;
+        region20000000right [ label=<<table cellborder="0" cellspacing="0" cellpadding="2" border="0" fixedsize="false" color="blue" height="129.60" width="144.00"><tr><td colspan="3" align="left" valign="top" width="144" height="64.8">0x4FFF FFFF</td></tr><tr><td colspan="3" align="left" valign="bottom" width="144" height="64.8">0x2000 0000</td></tr></table>> labelloc=c, labeljust=c, shape=none ];
+    }
+    region20000000 [ width=2.00, height=1.80, fixedsize=true ];
+    region20000000 [ label=<<table cellborder="0" cellspacing="0" cellpadding="2" border="0" fixedsize="false" color="blue" height="129.60" width="144.00"><tr><td colspan="3" align="left" valign="top" width="144" height="64.8">Bank 1</td></tr><tr><td colspan="3" align="center" valign="middle" width="144" height="64.8">768 MB</td></tr></table>> labelloc=c labeljust=c ];
+    region20000000 [ fillcolor="#4672c4", color="#000000", penwidth="2.0", style="filled" ];
+    region50000000 -> region20000000;
+
+    {
+        rank = same;
+        region00000000;
+        region00000000right [ label=<<table cellborder="0" cellspacing="0" cellpadding="2" border="0" fixedsize="false" color="blue" height="86.40" width="144.00"><tr><td colspan="3" align="left" valign="top" width="144" height="43.199999999999996">0x1FFF FFFF</td></tr><tr><td colspan="3" align="left" valign="bottom" width="144" height="43.199999999999996">0x0000 0000</td></tr></table>> labelloc=c, labeljust=c, shape=none ];
+    }
+    region00000000 [ width=2.00, height=1.20, fixedsize=true ];
+    region00000000 [ label=<<table cellborder="0" cellspacing="0" cellpadding="2" border="0" fixedsize="false" color="blue" height="86.40" width="144.00"><tr><td colspan="3" align="left" valign="top" width="144" height="43.199999999999996">Bank 0</td></tr><tr><td colspan="3" align="center" valign="middle" width="144" height="43.199999999999996">512 MB</td></tr></table>> labelloc=c labeljust=c ];
+    region00000000 [ fillcolor="#fbe5d5", color="#000000", penwidth="2.0", style="filled" ];
+    region20000000 -> region00000000;
+
+}
