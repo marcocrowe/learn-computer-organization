@@ -38,7 +38,7 @@ To convert $2^{31}$ to hex, we need to divide 31 by 4. This gives us 7 with a re
 
 This trick works because dividing any number by 4 gives a remainder of [0, 1, 2 or 3]
 
-$2^3 = 8 \\ 2^2=4\\2^1=2\\2^0=1$
+$2^3 = 8 \\ 2^2=4 \\ 2^1=2 \\ 2^0=1$
 
 A $2^4$ would give a $16_{10}$ = 0x10
 
