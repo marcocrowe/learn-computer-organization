@@ -11,5 +11,7 @@ This repository contains the notes and resources for the course Computer Organiz
 
 ## Tools Used
 
-- [LinkerScope](https://github.com/raulgotor/linkerscope?tab%3Dreadme-ov-file#creating-a-configuration-file "LinkerScope") - A Python tool to visualize memory maps and linker scripts.
 - [Memory layout diagrams](https://github.com/gerph/memory-layout-diagram "Memory layout diagrams") - A Python tool to visualize memory maps.
+- [Windows Calc](windows-calc.md "Windows Calc") - The built in calculator in Windows.
+- [gifcap](https://gifcap.dev/ "gifcap") - A free online tool to create GIFs from screen recordings.
+- [LinkerScope](https://github.com/raulgotor/linkerscope "LinkerScope") - A Python tool to visualize memory maps and linker scripts.
