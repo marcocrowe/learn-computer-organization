@@ -23,7 +23,7 @@ For a 32K x 8 memory that uses 8-way, low-order interleaving, find the location 
 
 #### Solution
 
-For 8-way low-order interleaving, the last $\log2(8) = 3$ bits are used to select the chip. The first 12 bits are used to select the offset. The address is divided into two parts: the chip address and the offset address.
+For `8-way` `low-order` interleaving, the last $\log2(8) = 3$ bits are used to select the chip. The first 12 bits are used to select the offset. The address is divided into two parts: the chip address and the offset address.
 
 | Offset Address | Chip Address |
 |---------------:|-------------:|
