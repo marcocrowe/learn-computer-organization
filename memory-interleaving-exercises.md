@@ -10,7 +10,7 @@ For a 32K x 8 memory that uses 16-way, high-order interleaving, find the locatio
 
 #### Solution
 
-For `16 way` high-order interleaving, The first $\log2(16) = 4$ bits are used to select the chip. The remaining 11 bits are used to select the offset. The address is divided into two parts: the chip address and the offset address.
+For `16 way` , `high-order` interleaving, The first $\log2(16) = 4$ bits are used to select the chip. The remaining 11 bits are used to select the offset. The address is divided into two parts: the chip address and the offset address.
 
 | Chip Address | Offset Address |
 |--------------|----------------|
@@ -23,9 +23,12 @@ For a 32K x 8 memory that uses 8-way, low-order interleaving, find the location 
 
 #### Solution
 
-For `8-way` `low-order` interleaving, the last $\log2(8) = 3$ bits are used to select the chip. The first 12 bits are used to select the offset. The address is divided into two parts: the chip address and the offset address.
+For `8-way` , `low-order` interleaving, the last $\log2(8) = 3$ bits are used to select the chip. The first 12 bits are used to select the offset. The address is divided into two parts: the chip address and the offset address.
 
 | Offset Address | Chip Address |
 |---------------:|-------------:|
 | 0010 0000 0100 |          111 |
 |     Offset 516 |       Chip 7 |
+
+---
+Copyright &copy; 2024 Mark Crowe <https://github.com/marcocrowe>. All rights reserved.

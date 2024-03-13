@@ -10,7 +10,7 @@ Create a Memory Map for a system with 2GB capacity. Assume the system has 3 x 32
 
 $2\text{ GB} = 2 * \text{GB} =  2*2^{30} = 2^{log_2(2)}*2^{30} = 2^1*2^{30} = 2^{31}.$ This means that we need 31 address lines.
 
-$2^{31} = 2,147,483,648_{10} = \text{0x8000 0000}$
+$2^{31} = 2, 147, 483, 648_{10} = \text{0x8000 0000}$
 
 ### Calculate the address range for the 3 x 32MB memory modules
 
@@ -18,7 +18,7 @@ Each module is 32MB = 32 * MB = $2^{log_2(32)} * 2^{20} = 2^5 * 2^{20} = 2^{25}$
 
 ### Module 1
 
-$2^{25} = 33,554,432_{10} = \text{0x0200 0000}$
+$2^{25} = 33, 554, 432_{10} = \text{0x0200 0000}$
 
 |   | start         | end           |                                        |
 |---|---------------|---------------|----------------------------------------|
@@ -50,19 +50,19 @@ $2^{25} = 33,554,432_{10} = \text{0x0200 0000}$
 
 $\text{GB} = 1024\text{ MB} \therefore 2\text{GB} = 2048\text{ MB} $
 $2048\text{ MB} -96\text{ MB} = 1952\text{ MB}$
-$1,952\text{ MB} = 1,952 * 2^{20} = 2,046,820,352_{10} = \text{0x7A00 0000}$
+$1, 952\text{ MB} = 1, 952 * 2^{20} = 2, 046, 820, 352_{10} = \text{0x7A00 0000}$
 
 ### Answer
 
 |              |     Size | Start Address | End Address   |
 |--------------|---------:|---------------|---------------|
-| `Free Space` | 1,952 MB | `0x6000 0000` | `0x05FF FFFF` |
-| `Module 3`   |    32 MB | `0x0400 0000` | `0x05FF FFFF` |
-| `Module 2`   |    32 MB | `0x0200 0000` | `0x03FF FFFF` |
-| `Module 1`   |    32 MB | `0x0000 0000` | `0x01FF FFFF` |
+| `Free Space` | 1, 952 MB | `0x6000 0000` | `0x05FF FFFF` |
+| `Module 3` |    32 MB | `0x0400 0000` | `0x05FF FFFF` |
+| `Module 2` |    32 MB | `0x0200 0000` | `0x03FF FFFF` |
+| `Module 1` |    32 MB | `0x0000 0000` | `0x01FF FFFF` |
 
 <table>
-  <tr><td bgcolor="#e2efd9">0x7FFF FFFF<br/>&nbsp;<br/>&nbsp;<br/>Free Space<br/>&nbsp;<br/>&nbsp;<br/>0x6000 0000</td></tr>
+  <tr><td bgcolor="#e2efd9">0x7FFF FFFF<br/>&nbsp; <br/>&nbsp; <br/>Free Space<br/>&nbsp; <br/>&nbsp; <br/>0x6000 0000</td></tr>
   <tr><td bgcolor="#a5a5a5">0x05FF FFFF<br/>Module 3<br/>0x0400 0000</td></tr>
   <tr><td bgcolor="#4672c4">0x03FF FFFF<br/>Module 2<br/>0x0200 0000</td></tr>
   <tr><td bgcolor="#fbe5d5">0x01FF FFFF<br/>Module 1<br/>0x0000 0000</td></tr>
@@ -78,13 +78,13 @@ Memory Map for a system with 4GB capacity. Assume the system has 2 x
 $4\text{ GB} = 4 * \text{GB} =  4*2^{30} = 2^{log_2(4)}*2^{30} = 2^2*2^{30} = 2^{(2+30)} = 2^{32}.$
 This means that we need 32 address lines.
 
-$2^{32} = 4,294,967,296_{10} = \text{0x0001 0000 0000}$
+$2^{32} = 4, 294, 967, 296_{10} = \text{0x0001 0000 0000}$
 
 |   |              start |                end |                                        |
 |---|-------------------:|-------------------:|----------------------------------------|
 |   | `0x0000 0000 0000` | `0x0001 0000 0000` |                                        |
 | - | `0x0000 0000 0001` | `0x0000 0000 0001` | (Offset by 1 because index is 0 based) |
-|   |      `0x0000 0000` |      `0xFFFF FFFF` |                                        |
+|   | `0x0000 0000` | `0xFFFF FFFF` |                                        |
 
 Address range is `0x0000 0000` to `0xFFFF FFFF` .
 
@@ -94,8 +94,8 @@ Each module is 256MB. $256 * 1\text{ MB} = 2^{log_2(256)} * 2^{20} = 2^8 * 2^{20
 
 ### Module 1
 
-$2^{28} = 268,435,456_{10} = \text{0x1000 0000}$
-$2^{28} = 268,435,456_{10} = \text{0x1000 0000}$
+$2^{28} = 268, 435, 456_{10} = \text{0x1000 0000}$
+$2^{28} = 268, 435, 456_{10} = \text{0x1000 0000}$
 
 |   | start         | end           |                                        |
 |---|---------------|---------------|----------------------------------------|
@@ -117,15 +117,15 @@ $2^{28} = 268,435,456_{10} = \text{0x1000 0000}$
 
 $\text{GB} = 1024\text{ MB} \therefore 4\text{GB} = 4096\text{ MB} $
 $4096\text{ MB} -512\text{ MB} = 3584\text{ MB}$
-$3,584\text{ MB} = 3,584 * 2^{20} = 3,758,096,384_{10} = \text{0xE000 0000}$
+$3, 584\text{ MB} = 3, 584 * 2^{20} = 3, 758, 096, 384_{10} = \text{0xE000 0000}$
 
 ### Answer
 
 |              |     Size | Start Address | End Address   |
 |--------------|---------:|---------------|---------------|
-| `Free Space` | 3,584 MB | `0x2000 0000` | `0xFFFF FFFF` |
-| `Module 2`   |   256 MB | `0x1000 0000` | `0x1FFF FFFF` |
-| `Module 1`   |   256 MB | `0x0000 0000` | `0x0FFF FFFF` |
+| `Free Space` | 3, 584 MB | `0x2000 0000` | `0xFFFF FFFF` |
+| `Module 2` |   256 MB | `0x1000 0000` | `0x1FFF FFFF` |
+| `Module 1` |   256 MB | `0x0000 0000` | `0x0FFF FFFF` |
 
 ## Example 3
 
@@ -136,7 +136,7 @@ Memory Map for a system with 8GB capacity. Assume the system has 3 x 160MB memor
 $8\text{ GB} = 8 * \text{GB} =  8*2^{30} = 2^{log_2(8)}*2^{30} = 2^3*2^{30} = 2^{(3+30)} = 2^{33}.$
 This means that we need 33 address lines.
 
-$2^{33} = 8,589,934,592_{10} = \text{0x0002 0000 0000}$
+$2^{33} = 8, 589, 934, 592_{10} = \text{0x0002 0000 0000}$
 
 |   |              start |                end |                                        |
 |---|-------------------:|-------------------:|----------------------------------------|
@@ -148,7 +148,7 @@ Address range is `0x0000 0000 0000` to `0x0001 FFFF FFFF` .
 
 ### Calculate the address range for the 3 x 160MB memory modules
 
-Each module is 160MB. $160 * 1\text{ MB} = 160 * 2^{20} = 167,772,160_{10} = \text{0x0A00 0000}$
+Each module is 160MB. $160 * 1\text{ MB} = 160 * 2^{20} = 167, 772, 160_{10} = \text{0x0A00 0000}$
 
 ### Module 1
 
@@ -182,21 +182,21 @@ $160\text{MB} =\text{0x0A00 0000}$
 
 ### Calculate free space
 
-$\text{GB} = 1,024\text{ MB} \therefore 8\text{GB} = 8,192\text{ MB} $
-$8,192\text{ MB} -480\text{ MB} = 7,712\text{ MB}$
-$7,712\text{ MB} = 7,712 * 2^{20} = 8,086,618,112_{10} = \text{0x0001 E200 0000}$
+$\text{GB} = 1, 024\text{ MB} \therefore 8\text{GB} = 8, 192\text{ MB} $
+$8, 192\text{ MB} -480\text{ MB} = 7, 712\text{ MB}$
+$7, 712\text{ MB} = 7, 712 * 2^{20} = 8, 086, 618, 112_{10} = \text{0x0001 E200 0000}$
 
 ### Answer
 
 |              |     Size | Start Address      | End Address        |
 |--------------|---------:|--------------------|--------------------|
-| `Free Space` | 7,712 MB | `0X0000 1E00 0000` | `0x0001 FFFF FFFF` |
-| `Module 3`   |   160 MB | `0x0000 1400 0000` | `0x0000 1DFF FFFF` |
-| `Module 2`   |   160 MB | `0x0000 0A00 0000` | `0x0000 13FF FFFF` |
-| `Module 1`   |   160 MB | `0x0000 0000 0000` | `0x0000 09FF FFFF` |
+| `Free Space` | 7, 712 MB | `0X0000 1E00 0000` | `0x0001 FFFF FFFF` |
+| `Module 3` |   160 MB | `0x0000 1400 0000` | `0x0000 1DFF FFFF` |
+| `Module 2` |   160 MB | `0x0000 0A00 0000` | `0x0000 13FF FFFF` |
+| `Module 1` |   160 MB | `0x0000 0000 0000` | `0x0000 09FF FFFF` |
 
 <table>
-  <tr><td bgcolor="#e2efd9">0x0001 FFFF FFFF<br/>&nbsp;<br/>&nbsp;<br/>Free Space<br/>&nbsp;<br/>&nbsp;<br/>0X0000 1E00 0000</td></tr>
+  <tr><td bgcolor="#e2efd9">0x0001 FFFF FFFF<br/>&nbsp; <br/>&nbsp; <br/>Free Space<br/>&nbsp; <br/>&nbsp; <br/>0X0000 1E00 0000</td></tr>
   <tr><td bgcolor="#a5a5a5">0x0000 1DFF FFFF<br/>Module 3<br/>0x0000 1400 0000</td></tr>
   <tr><td bgcolor="#4672c4">0x0000 13FF FFFF<br/>Module 2<br/>0x0000 0A00 0000</td></tr>
   <tr><td bgcolor="#fbe5d5">0x0000 09FF FFFF<br/>Module 1<br/>0x0000 0000 0000</td></tr>
@@ -204,7 +204,7 @@ $7,712\text{ MB} = 7,712 * 2^{20} = 8,086,618,112_{10} = \text{0x0001 E200 0000}
 
 ## Exercise 1
 
-A  video  game  console  has  a  memory  capacity  of  512  MB.  The memory is divided into 4 banks of equal size. Each bank consists of 2 chips,  with  each  chip  having  a  capacity  of  64  MB.  Draw  a  memory map that shows the location and size of each memory bank and chip.
+A  video  game  console  has  a  memory  capacity  of  512  MB.  The memory is divided into 4 banks of equal size. Each bank consists of 2 chips, with  each  chip  having  a  capacity  of  64  MB.  Draw  a  memory map that shows the location and size of each memory bank and chip.
 
 1. Find full range of addresses
 2. Find range of each chip.
@@ -343,16 +343,15 @@ Address `Bank 3 - Chip 1` = `0x1C00 0000` - `0x1FFF FFFF`
 |          | `Chip 0` | 64 MB | `0x0000 0000` | `0x03FF FFFF` |
 
 <table>
-  <tr><td bgcolor="#e2efd9">0x1FFF FFFF<br/>&nbsp;<br/>&nbsp;<br/>Bank 3 - Chip 1<br/>&nbsp;<br/>&nbsp;<br/>0x1C00 0000</td></tr>
+  <tr><td bgcolor="#e2efd9">0x1FFF FFFF<br/>&nbsp; <br/>&nbsp; <br/>Bank 3 - Chip 1<br/>&nbsp; <br/>&nbsp; <br/>0x1C00 0000</td></tr>
   <tr><td bgcolor="#a5a5a5">0x17FF FFFF<br/>Bank 3 - Chip 0<br/>0x1800 0000</td></tr>
   <tr><td bgcolor="#4672c4">0x13FF FFFF<br/>Bank 2 - Chip 1<br/>0x1400 0000</td></tr>
   <tr><td bgcolor="#fbe5d5">0x0FFF FFFF<br/>Bank 2 - Chip 0<br/>0x1000 0000</td></tr>
-  <tr><td bgcolor="#e2efd9">0x0BFF FFFF<br/>&nbsp;<br/>&nbsp;<br/>Bank 1 - Chip 1<br/>&nbsp;<br/>&nbsp;<br/>0x0C00 0000</td></tr>
+  <tr><td bgcolor="#e2efd9">0x0BFF FFFF<br/>&nbsp; <br/>&nbsp; <br/>Bank 1 - Chip 1<br/>&nbsp; <br/>&nbsp; <br/>0x0C00 0000</td></tr>
   <tr><td bgcolor="#a5a5a5">0x07FF FFFF<br/>Bank 1 - Chip 0<br/>0x0800 0000</td></tr>
   <tr><td bgcolor="#4672c4">0x03FF FFFF<br/>Bank 0 - Chip 1<br/>0x0400 0000</td></tr>
   <tr><td bgcolor="#fbe5d5">0x0000 0000<br/>Bank 0 - Chip 0<br/>0x0000 0000</td></tr>
   </table>
-
 
 ## Exercise 3
 
@@ -467,4 +466,7 @@ Solution: built with [Memory layout diagrams](https://github.com/gerph/memory-la
 
 ![memory-map-3](image/memory-maps-exercises/memory-map-3.svg)
 
->[Image source code](image/memory-maps-exercises/memory-map-3.mld)
+> [Image source code](image/memory-maps-exercises/memory-map-3.mld)
+
+---
+Copyright &copy; 2024 Mark Crowe <https://github.com/marcocrowe>. All rights reserved.

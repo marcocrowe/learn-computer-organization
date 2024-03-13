@@ -63,3 +63,6 @@ For $2^{18} \\ q = 18/4 = 4 \\ r = 18 \mod 4 = 2 \\ 2^r * \text{0x10}^q = 2^2 * 
 ## Exercises
 
 [Example Exercise](./memory-maps-exercises.md "Memory Maps - exercises")
+
+---
+Copyright &copy; 2024 Mark Crowe <https://github.com/marcocrowe>. All rights reserved.
