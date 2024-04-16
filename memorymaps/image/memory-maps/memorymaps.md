@@ -113,7 +113,7 @@ A computer system has a memory with a capacity of 2 GB. The memory is divided in
 
 Draw a memory map that shows the location and size of each memory bank.
 
-![1710166707411](image/memory-maps/memory-bank.png)
+![Memory map](image.png)
 
 <table>
     <tr><td bgcolor="lightgreen">Bank 3</td><td>?</td></tr>
