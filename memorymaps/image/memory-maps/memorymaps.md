@@ -1,4 +1,3 @@
-
 # Memory Maps
 
 A memory map is a diagram of the memory system that shows the address range and the memory modules installed in the system. It's used to illustrate the address range for each memory module and the amount of free space in the system.
@@ -44,7 +43,9 @@ $2^{31} = 2,147,483,648_{10} = \text{0x8000\;0000}$
 
 Step 2: calculate the address range for the 3 x 32MB memory modules. Each module is 32MB = 32 * MB = 2^5 x 2^20 = 2^25. This means that we need 25 address lines to address 32MB of memory.
 
-$$2^{25} = 33,554,432_{10} = 0x200\;0000$$
+$$
+2^{25} = 33,554,432_{10} = 0x200\;0000
+$$
 
 25 / 4 = 6 with a remainder of 1. This means that we need 6 hex digits to represent the address. This means that the address range is 0x000 0000 to 0x1FF FFFF.
 
@@ -77,13 +78,17 @@ Memory Map for a system with 8GB capacity. Assume the system has 3 x 160MB memor
 
 Step 1: calculate full address range: 8GB = 8 * GB = 2^3 x 2^30 = 2^33. This means that we need 33 address lines.
 
-$$2^{33} = 8,589,934,592_{10} = 0x2000\;0000$$
+$$
+2^{33} = 8,589,934,592_{10} = 0x2000\;0000
+$$
 
 33 / 4 = 8 with a remainder of 1. This means that we need 8 hex digits to represent the address. This means that the address range is 0x0000 0000 to 0xFFFF FFFF.** dont trust this**
 
 Step 2: calculate the address range for the 3 x 160MB memory modules. Each module is 160MB = 160 * MB = 2^8 x 2^20 = 2^28. This means that we need 28 address lines to address 160MB of memory.
 
-$$2^{28} = 268,435,456_{10} = 0x1000\;0000$$
+$$
+2^{28} = 268,435,456_{10} = 0x1000\;0000
+$$
 
 28 / 4 = 7 with a remainder of 0. This means that we need 7 hex digits to represent the address. This means that the address range is 0x0000 0000 to 0x0FFF FFFF.
 
@@ -109,6 +114,7 @@ A computer system has a memory with a capacity of 2 GB. The memory is divided in
 Draw a memory map that shows the location and size of each memory bank.
 
 ![1710166707411](image/memory-maps/memory-bank.png)
+
 <table>
     <tr><td bgcolor="lightgreen">Bank 3</td><td>?</td></tr>
     <tr><td bgcolor="lightblue">Bank 2</td><td>?</td></tr>
@@ -122,8 +128,6 @@ Draw a memory map that shows the location and size of each memory bank.
 | Bank 2 | 256 MB |               |             |
 | Bank 1 | 768 MB |               |             |
 | Bank 0 | 512 MB |               |             |
-
-
 
 ### Step 1: calculate full address range
 
@@ -150,11 +154,11 @@ $2^{29} = 805,306,368_{10} = 0x3000\;0000$
 
 0x0000 0000 - 0x1FFF FFFF is taken, so add 0x1FFF FFFF to the address range
 
-|     | start       | end         |                          |
-| --- | ----------- | ----------- | ------------------------ |
-|     | 0x0000 0000 | 0x3000 0000 |                          |
-| +   | 0x1FFF FFFF | 0x1FFF FFFF | (last address of bank 0) |
-|     | 0x1FFF FFFF | 0x4FFF FFFF |                          |
+|   | start       | end         |                          |
+| - | ----------- | ----------- | ------------------------ |
+|   | 0x0000 0000 | 0x3000 0000 |                          |
+| + | 0x1FFF FFFF | 0x1FFF FFFF | (last address of bank 0) |
+|   | 0x1FFF FFFF | 0x4FFF FFFF |                          |
 
 address bank 1 = 0x2000 0000 - 0x4FFF FFFF
 
@@ -166,11 +170,11 @@ $2^{28} = 268,435,456_{10} = 0x1000\;0000$
 
 0x0000 0000 - 0x4FFF FFFF is taken, so add 0x4FFF FFFF to the address range
 
-|     | start       | end         |                          |
-| --- | ----------- | ----------- | ------------------------ |
-|     | 0x0000 0000 | 0x1000 0000 |                          |
-| +   | 0x4FFF FFFF | 0x4FFF FFFF | (last address of bank 1) |
-|     | 0x4FFF FFFF | 0x5000 0000 |                          |
+|   | start       | end         |                          |
+| - | ----------- | ----------- | ------------------------ |
+|   | 0x0000 0000 | 0x1000 0000 |                          |
+| + | 0x4FFF FFFF | 0x4FFF FFFF | (last address of bank 1) |
+|   | 0x4FFF FFFF | 0x5000 0000 |                          |
 
 address bank 2 = 0x5000 0000 - 0x5FFF FFFF
 
@@ -182,14 +186,13 @@ $2^{29} = 536,870,912_{10} = 0x2000\;0000$
 
 0x0000 0000 - 0x5FFF FFFF is taken, so add 0x5FFF FFFF to the address range
 
-|     | start       | end         |                          |
-| --- | ----------- | ----------- | ------------------------ |
-|     | 0x0000 0000 | 0x2000 0000 |                          |
-| +   | 0x5FFF FFFF | 0x5FFF FFFF | (last address of bank 2) |
-|     | 0x5FFF FFFF | 0x7FFF FFFF |                          |
+|   | start       | end         |                          |
+| - | ----------- | ----------- | ------------------------ |
+|   | 0x0000 0000 | 0x2000 0000 |                          |
+| + | 0x5FFF FFFF | 0x5FFF FFFF | (last address of bank 2) |
+|   | 0x5FFF FFFF | 0x7FFF FFFF |                          |
 
 address bank 3 = 0x6000 0000 - 0x7FFF FFFF
-
 
 <table>
     <tr><td bgcolor="lightgreen">Bank 3</td><td>512 MB</td><td>0x6000 0000</td><td>0x7FFF FFFF</td></tr>
