@@ -16,7 +16,7 @@ $$
 
 total of 7, minus 3 for mempry bank address leave 4bits
 
-4first 4 bits are used to select the byte in the bank, followed by teh last 3 bits to select the bank
+The first 4 bits are used to select the byte in the bank, followed by the last 3 bits to select the bank
 
 e.g. first address in bank 0 is 0000 in the bank 000
 
