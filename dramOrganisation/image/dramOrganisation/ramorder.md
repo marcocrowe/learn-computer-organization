@@ -1,15 +1,16 @@
-# Here's a more memorable phrase using the first letter of each term:
+# Here's a more memorable phrase using the first letter of each term
 
-## C DRIP CACHE
+## "Can Do Real Cool Things, But Always Carefully"
 
-This uses:
+This phrase is a mnemonic to help you remember the order of the bits in the address for a memory system with 8-way interleaving. The first letter of each word in the phrase corresponds to the order of the bits in the address:
 
-C - Channel
-D - DIMM
-R - Rank
-I - Integrated Circuit (representing Chip)
-P - Bank
-C - Cell
-A - Array (combined with Cell to form CACHE)
-
-This creates a phrase that's easier to remember because it sounds similar to "c drip cache," which could be a catchy term for a small, efficient memory unit. While it's not a technical acronym, it provides a memory aid for the full term.
+| Bit Order     | Term    |
+|---------------|---------|
+| C (Can)       | Channel |
+| D (Do)        | DIMM    |
+| R (Real)      | Rank    |
+| C (Cool)      | Chip    |
+| T (Things)    |         |
+| B (But)       | Bank    |
+| A (Always)    |         |
+| C (Carefully) | Cell    |
