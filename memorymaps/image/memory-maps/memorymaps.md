@@ -82,7 +82,7 @@ $$
 2^{33} = 8,589,934,592_{10} = 0x2000\;0000
 $$
 
-33 / 4 = 8 with a remainder of 1. This means that we need 8 hex digits to represent the address. This means that the address range is 0x0000 0000 to 0xFFFF FFFF.** dont trust this**
+33 / 4 = 8 with a remainder of 1. This means that we need 8 hex digits to represent the address. This means that the address range is 0x0000 0000 to 0xFFFF FFFF.**dont trust this**
 
 Step 2: calculate the address range for the 3 x 160MB memory modules. Each module is 160MB = 160 * MB = 2^8 x 2^20 = 2^28. This means that we need 28 address lines to address 160MB of memory.
 
@@ -114,13 +114,6 @@ A computer system has a memory with a capacity of 2 GB. The memory is divided in
 Draw a memory map that shows the location and size of each memory bank.
 
 ![Memory map](image.png)
-
-<table>
-    <tr><td bgcolor="lightgreen">Bank 3</td><td>?</td></tr>
-    <tr><td bgcolor="lightblue">Bank 2</td><td>?</td></tr>
-    <tr><td bgcolor="lightcoral">Bank 1</td><td>?</td></tr>
-    <tr><td bgcolor="lightyellow">Bank 0</td><td>?</td></tr>
-</table>
 
 | Bank   | Size   | Start Address | End Address |
 | ------ | ------ | ------------- | ----------- |
@@ -193,13 +186,6 @@ $2^{29} = 536,870,912_{10} = 0x2000\;0000$
 |   | 0x5FFF FFFF | 0x7FFF FFFF |                          |
 
 address bank 3 = 0x6000 0000 - 0x7FFF FFFF
-
-<table>
-    <tr><td bgcolor="lightgreen">Bank 3</td><td>512 MB</td><td>0x6000 0000</td><td>0x7FFF FFFF</td></tr>
-    <tr><td bgcolor="lightblue">Bank 2</td><td>256 MB</td><td>0x5000 0000</td><td>0x5FFF FFFF</td></tr>
-    <tr><td bgcolor="lightcoral">Bank 1</td><td>768 MB</td><td>0x2000 0000</td><td>0x4FFF FFFF</td></tr>
-    <tr><td bgcolor="lightyellow">Bank 0</td><td>512 MB</td><td>0x0000 0000</td><td>0x1FFF FFFF</td></tr>
-</table>
 
 | Bank   | Size   | Start Address | End Address |
 | ------ | ------ | ------------- | ----------- |
