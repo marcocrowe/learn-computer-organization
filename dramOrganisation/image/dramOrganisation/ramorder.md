@@ -12,5 +12,5 @@ This phrase is a mnemonic to help you remember the order of the bits in the addr
 | C (Cool)      | Chip    |
 | T (Things)    |         |
 | B (But)       | Bank    |
-| A (Always)    |         |
+| A (Always)    | Array   |
 | C (Carefully) | Cell    |
