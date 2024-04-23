@@ -8,7 +8,7 @@ Create a Memory Map for a system with 2GB capacity. Assume the system has 3 x 32
 
 ### Calculate full address range
 
-$2GB = 2 * GB =  2*2^{30} = 2^{log_2(2)}*2^{30} = 2^1*2^{30} = 2^{31}.$ This means that we need 31 address lines.
+ $2 \text{ GB} = 2 * \text{GB} =  2*2^{30} = 2^{log_2(2)}*2^{30} = 2^1*2^{30} = 2^{31}.$ This means that we need 31 address lines.
 
 $2^{31} = 2, 147, 483, 648_{10} = \text{0x8000 0000}$
 
