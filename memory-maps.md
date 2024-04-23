@@ -60,7 +60,13 @@ Now using the quick trick:
 
 For $2^{18} \\ q = 18/4 = 4 \\ r = 18 \mod 4 = 2 \\ 2^r * \text{0x10}^q = 2^2 * \text{0x10}^4 =  4 * \text{0x10}^4 = 4 * \text{0x1000}= \text{0x4000}$
 
-## Exercises
+Example3: What is $2^{25}$ expressed in hexadecimal?
+
+$2^{25} = 2^1 * 2^4 * 2^4 * 2^4 * 2^4 * 2^4 * 2^4 = 2^1 * (2^4)^{6} = 2 * \text{0x10}^6 = 2 * \text{0x100 0000} = \text{0x200 0000}$  
+
+Now using the quick trick:
+
+For $2^{25} \\ q = 25/4 = 6 \\ r = 25 \mod 4 = 1 \\ 2^r * \text{0x10}^q = 2^1 * \text{0x10}^6 =  2 * \text{0x10}^6 = 2 * \text{0x100 0000}= \text{0x200 0000}$
 
 [Example Exercise](./memory-maps-exercises.md "Memory Maps - exercises")
 

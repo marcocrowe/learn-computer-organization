@@ -50,14 +50,14 @@ $2^{25} = 33, 554, 432_{10} = \text{0x0200 0000}$
 ### Calculate free space
 
 $\text{GB} = 1024\text{ MB} \therefore 2\text{GB} = 2048\text{ MB} $
-$2048\text{ MB} -96\text{ MB} = 1952\text{ MB}$
+$2048\text{ MB} -3 (32 \text{ MB}) = 2048\text{ MB} -96\text{ MB} = 1952\text{ MB}$
 $1, 952\text{ MB} = 1, 952 * 2^{20} = 2, 046, 820, 352_{10} = \text{0x7A00 0000}$
 
 ### Answer
 
 |              |     Size | Start Address | End Address   |
 |--------------|---------:|---------------|---------------|
-| `Free Space` | 1, 952 MB | `0x6000 0000` | `0x05FF FFFF` |
+| `Free Space` | 1, 952 MB | `0x6000 0000` | `0x7FFF FFFF` |
 | `Module 3` |    32 MB | `0x0400 0000` | `0x05FF FFFF` |
 | `Module 2` |    32 MB | `0x0200 0000` | `0x03FF FFFF` |
 | `Module 1` |    32 MB | `0x0000 0000` | `0x01FF FFFF` |
