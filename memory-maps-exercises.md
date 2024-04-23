@@ -55,12 +55,12 @@ $1, 952\text{ MB} = 1, 952 * 2^{20} = 2, 046, 820, 352_{10} = \text{0x7A00 0000}
 
 ### Answer
 
-|              |     Size | Start Address | End Address   |
-|--------------|---------:|---------------|---------------|
+|              |      Size | Start Address | End Address   |
+|--------------|----------:|---------------|---------------|
 | `Free Space` | 1, 952 MB | `0x6000 0000` | `0x7FFF FFFF` |
-| `Module 3` |    32 MB | `0x0400 0000` | `0x05FF FFFF` |
-| `Module 2` |    32 MB | `0x0200 0000` | `0x03FF FFFF` |
-| `Module 1` |    32 MB | `0x0000 0000` | `0x01FF FFFF` |
+| `Module 3`   |     32 MB | `0x0400 0000` | `0x05FF FFFF` |
+| `Module 2`   |     32 MB | `0x0200 0000` | `0x03FF FFFF` |
+| `Module 1`   |     32 MB | `0x0000 0000` | `0x01FF FFFF` |
 
 <table>
   <tr><td bgcolor="#e2efd9">0x7FFF FFFF<br/>&nbsp; <br/>&nbsp; <br/>Free Space<br/>&nbsp; <br/>&nbsp; <br/>0x6000 0000</td></tr>
@@ -85,7 +85,7 @@ $2^{32} = 4, 294, 967, 296_{10} = \text{0x0001 0000 0000}$
 |---|-------------------:|-------------------:|----------------------------------------|
 |   | `0x0000 0000 0000` | `0x0001 0000 0000` |                                        |
 | - | `0x0000 0000 0001` | `0x0000 0000 0001` | (Offset by 1 because index is 0 based) |
-|   | `0x0000 0000` | `0xFFFF FFFF` |                                        |
+|   |      `0x0000 0000` |      `0xFFFF FFFF` |                                        |
 
 Address range is `0x0000 0000` to `0xFFFF FFFF` .
 
@@ -122,11 +122,11 @@ $3, 584\text{ MB} = 3, 584 * 2^{20} = 3, 758, 096, 384_{10} = \text{0xE000 0000}
 
 ### Answer
 
-|              |     Size | Start Address | End Address   |
-|--------------|---------:|---------------|---------------|
+|              |      Size | Start Address | End Address   |
+|--------------|----------:|---------------|---------------|
 | `Free Space` | 3, 584 MB | `0x2000 0000` | `0xFFFF FFFF` |
-| `Module 2` |   256 MB | `0x1000 0000` | `0x1FFF FFFF` |
-| `Module 1` |   256 MB | `0x0000 0000` | `0x0FFF FFFF` |
+| `Module 2`   |    256 MB | `0x1000 0000` | `0x1FFF FFFF` |
+| `Module 1`   |    256 MB | `0x0000 0000` | `0x0FFF FFFF` |
 
 ## Example 3
 
@@ -189,12 +189,12 @@ $7, 712\text{ MB} = 7, 712 * 2^{20} = 8, 086, 618, 112_{10} = \text{0x0001 E200 
 
 ### Answer
 
-|              |     Size | Start Address      | End Address        |
-|--------------|---------:|--------------------|--------------------|
+|              |      Size | Start Address      | End Address        |
+|--------------|----------:|--------------------|--------------------|
 | `Free Space` | 7, 712 MB | `0X0000 1E00 0000` | `0x0001 FFFF FFFF` |
-| `Module 3` |   160 MB | `0x0000 1400 0000` | `0x0000 1DFF FFFF` |
-| `Module 2` |   160 MB | `0x0000 0A00 0000` | `0x0000 13FF FFFF` |
-| `Module 1` |   160 MB | `0x0000 0000 0000` | `0x0000 09FF FFFF` |
+| `Module 3`   |    160 MB | `0x0000 1400 0000` | `0x0000 1DFF FFFF` |
+| `Module 2`   |    160 MB | `0x0000 0A00 0000` | `0x0000 13FF FFFF` |
+| `Module 1`   |    160 MB | `0x0000 0000 0000` | `0x0000 09FF FFFF` |
 
 <table>
   <tr><td bgcolor="#e2efd9">0x0001 FFFF FFFF<br/>&nbsp; <br/>&nbsp; <br/>Free Space<br/>&nbsp; <br/>&nbsp; <br/>0X0000 1E00 0000</td></tr>
@@ -411,11 +411,11 @@ $2^{29} = 805, 306, 368_{10} = \text{0x3000 0000}$
 
 `0x0000 0000` - `0x1FFF FFFF` is taken, so add `0x1FFF FFFF` to the address range
 
-|   | start         | end           |                             |
-|---|---------------|---------------|-----------------------------|
-|   | `0x0000 0001` | `0x3000 0000` |                             |
-| + | `0x1FFF FFFF` | `0x1FFF FFFF` | (last address of `Bank 0` ) |
-|   | `0x2000 0000` | `0x4FFF FFFF` |                             |
+|   | start         | end           |                            |
+|---|---------------|---------------|----------------------------|
+|   | `0x0000 0001` | `0x3000 0000` |                            |
+| + | `0x1FFF FFFF` | `0x1FFF FFFF` | (end address of `Bank 0` ) |
+|   | `0x2000 0000` | `0x4FFF FFFF` |                            |
 
 Address `Bank 1` = 0x2000 0000 - 0x4FFF FFFF
 
@@ -425,11 +425,11 @@ $256\text{ MB} = 256 * 1\text{ MB} = 2^{log_2(256)} * 2^{20} = 2^8 * 2^{20} = 2^
 
 `0x0000 0000` - `0x4FFF FFFF` is taken, so add `0x4FFF FFFF` to the address range
 
-|   | start         | end           |                             |
-|---|---------------|---------------|-----------------------------|
-|   | `0x0000 0001` | `0x1000 0000` |                             |
-| + | `0x4FFF FFFF` | `0x4FFF FFFF` | (last address of `Bank 1` ) |
-|   | `0x5000 0000` | `0x5FFF FFFF` |                             |
+|   | start         | end           |                            |
+|---|---------------|---------------|----------------------------|
+|   | `0x0000 0001` | `0x1000 0000` |                            |
+| + | `0x4FFF FFFF` | `0x4FFF FFFF` | (end address of `Bank 1` ) |
+|   | `0x5000 0000` | `0x5FFF FFFF` |                            |
 
 Address `Bank 2` = `0x5000 0000` - `0x5FFF FFFF`
 
@@ -439,11 +439,11 @@ $512\text{ MB} = 512 * 1\text{ MB} = 2^{log_2(512)} * 2^{20} = 2^9 * 2^{20} = 2^
 
 `0x0000 0000` - `0x5FFF FFFF` is taken, so add `0x5FFF FFFF` to the address range
 
-|   | start         | end           |                             |
-|---|---------------|---------------|-----------------------------|
-|   | `0x0000 0001` | `0x2000 0000` |                             |
-| + | `0x5FFF FFFF` | `0x5FFF FFFF` | (last address of `Bank 2` ) |
-|   | `0x6000 0000` | `0x7FFF FFFF` |                             |
+|   | start         | end           |                            |
+|---|---------------|---------------|----------------------------|
+|   | `0x0000 0001` | `0x2000 0000` |                            |
+| + | `0x5FFF FFFF` | `0x5FFF FFFF` | (end address of `Bank 2` ) |
+|   | `0x6000 0000` | `0x7FFF FFFF` |                            |
 
 Address `Bank 3` = `0x6000 0000` - `0x7FFF FFFF`
 
