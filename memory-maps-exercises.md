@@ -8,7 +8,7 @@ Create a Memory Map for a system with 2GB capacity. Assume the system has 3 x 32
 
 ### Calculate full address range
 
-$2 \text{ GB} = 2 * \text{GB} =  2 * 2^{30} = 2^{log_2(2)} * 2^{30} = 2^1*2^{30} = 2^{31}.$
+$2 \text{ GB} = 2 * \text{GB} =  2 * 2^{30} = 2^{log_2(2)} * 2^{30} = 2^1 * 2^{30} = 2^{31}.$
 This means that we need 31 address lines.
 
 $2^{31} = 2, 147, 483, 648_{10} = \text{0x8000 0000}$
@@ -76,7 +76,7 @@ Memory Map for a system with 4GB capacity. Assume the system has 2 x
 
 ### Calculate full address range
 
-$4\text{ GB} = 4 * \text{GB} =  4*2^{30} = 2^{log_2(4)}*2^{30} = 2^2*2^{30} = 2^{(2+30)} = 2^{32}.$
+$4\text{ GB} = 4 * \text{GB} =  4 * 2^{30} = 2^{log_2(4)} * 2^{30} = 2^2 * 2^{30} = 2^{(2+30)} = 2^{32}.$
 This means that we need 32 address lines.
 
 $2^{32} = 4, 294, 967, 296_{10} = \text{0x0001 0000 0000}$
@@ -134,7 +134,7 @@ Memory Map for a system with 8GB capacity. Assume the system has 3 x 160MB memor
 
 ### Calculate full address range
 
-$8\text{ GB} = 8 * \text{GB} =  8*2^{30} = 2^{log_2(8)}*2^{30} = 2^3*2^{30} = 2^{(3+30)} = 2^{33}.$
+$8\text{ GB} = 8 * \text{GB} =  8 * 2^{30} = 2^{log_2(8)} * 2^{30} = 2^3 * 2^{30} = 2^{(3+30)} = 2^{33}.$
 This means that we need 33 address lines.
 
 $2^{33} = 8, 589, 934, 592_{10} = \text{0x0002 0000 0000}$
@@ -226,7 +226,7 @@ Draw a memory map that shows the location and size of each memory bank.
 
 ### Calculate full address range
 
-$512\text{ MB} = 512 * 1\text{ MB} =  512*2^{20} = 2^{log_2(512)}*2^{20} = 2^9*2^{20} = 2^{29} = 536, 870, 912_{10} = \text{0x2000 0000}$
+$512\text{ MB} = 512 * 1\text{ MB} =  512 * 2^{20} = 2^{log_2(512)} * 2^{20} = 2^9 * 2^{20} = 2^{29} = 536, 870, 912_{10} = \text{0x2000 0000}$
 
 |   | start         | end           |                                        |
 |---|---------------|---------------|----------------------------------------|
@@ -236,7 +236,7 @@ $512\text{ MB} = 512 * 1\text{ MB} =  512*2^{20} = 2^{log_2(512)}*2^{20} = 2^9*2
 
 ### Calculate `Bank 0 - Chip 0` address range
 
-$64\text{ MB} = 64 * 1\text{ MB} =  2^6*2^{20} = 2^{(6+20)} = 2^{26} = 67, 108, 864_{10} = \text{0x0400 0000}$
+$64\text{ MB} = 64 * 1\text{ MB} =  2^6 * 2^{20} = 2^{(6+20)} = 2^{26} = 67, 108, 864_{10} = \text{0x0400 0000}$
 
 |   | start         | end           |                                        |
 |---|---------------|---------------|----------------------------------------|
@@ -381,7 +381,7 @@ Draw a memory map that shows the location and size of each memory bank.
 
 ### Calculate full address range
 
-$2\text{ GB} = 2 * 1\text{ GB} =  2^{1}*2^{30} = 2^{(1+30)} = \\ 2^{31} = 2, 147, 483, 648_{10} = \text{0x8000 0000}$
+$2\text{ GB} = 2 * 1\text{ GB} =  2^{1} * 2^{30} = 2^{(1+30)} = \\ 2^{31} = 2, 147, 483, 648_{10} = \text{0x8000 0000}$
 
 |   | start         | end           |                                        |
 |---|---------------|---------------|----------------------------------------|
@@ -393,7 +393,7 @@ Address range is `0x0000 0000` to `0x7FFF FFFF` .
 
 ### Calculate `Bank 0` address range
 
-$512\text{ MB} = 512 * \text{MB} =  512*2^{20} = 2^{log_2(512)}*2^{20} = 2^9*2^{20} = \\ 2^{29} = 536, 870, 912_{10} = \text{0x2000 0000}$
+$512\text{ MB} = 512 * \text{MB} =  512 * 2^{20} = 2^{log_2(512)} * 2^{20} = 2^9 * 2^{20} = \\ 2^{29} = 536, 870, 912_{10} = \text{0x2000 0000}$
 
 |   | start         | end           |                                        |
 |---|---------------|---------------|----------------------------------------|
@@ -405,7 +405,7 @@ Address `Bank 0` = `0x0000 0000` - `0x1FFF FFFF`
 
 ### Calculate `Bank 1` address range
 
-$768\text{ MB} = 768 * 1\text{ MB} =  768*2^{20} = 768 * 1, 048, 576 = \\ 805, 306, 368_{10} = \text{0x3000 0000}$
+$768\text{ MB} = 768 * 1\text{ MB} =  768 * 2^{20} = 768 * 1, 048, 576 = \\ 805, 306, 368_{10} = \text{0x3000 0000}$
 
 $2^{29} = 805, 306, 368_{10} = \text{0x3000 0000}$
 
@@ -421,7 +421,7 @@ Address `Bank 1` = 0x2000 0000 - 0x4FFF FFFF
 
 ### Calculate `Bank 2` address range
 
-$256\text{ MB} = 256 * 1\text{ MB} = 2^{log_2(256)} * 2^{20} = 2^8*2^{20} = 2^{(8+20)} = \\ 2^{28} = 268, 435, 456_{10} = \text{0x1000 0000}$
+$256\text{ MB} = 256 * 1\text{ MB} = 2^{log_2(256)} * 2^{20} = 2^8 * 2^{20} = 2^{(8+20)} = \\ 2^{28} = 268, 435, 456_{10} = \text{0x1000 0000}$
 
 `0x0000 0000` - `0x4FFF FFFF` is taken, so add `0x4FFF FFFF` to the address range
 
@@ -435,7 +435,7 @@ Address `Bank 2` = `0x5000 0000` - `0x5FFF FFFF`
 
 ### Calculate `Bank 3` address range
 
-$512\text{ MB} = 512 * 1\text{ MB} = 2^{log_2(512)} * 2^{20} = 2^9*2^{20} = 2^{(9+20)} = \\ 2^{29} = 536, 870, 912_{10} = \text{0x2000 0000}$
+$512\text{ MB} = 512 * 1\text{ MB} = 2^{log_2(512)} * 2^{20} = 2^9 * 2^{20} = 2^{(9+20)} = \\ 2^{29} = 536, 870, 912_{10} = \text{0x2000 0000}$
 
 `0x0000 0000` - `0x5FFF FFFF` is taken, so add `0x5FFF FFFF` to the address range
 
