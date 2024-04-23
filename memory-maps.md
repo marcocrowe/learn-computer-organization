@@ -32,9 +32,9 @@ Additional calculations:
 
 ## Converting To Hexadecimal
 
-> Division Rule and terms: Dividend / Divisor = Quotient + Remainder / Divisor
-> Dividend / Divisor = Quotient
-> Dividend % Divisor = Remainder
+> Division Rule and terms: Dividend / Divisor = Quotient + Remainder / Divisor  
+> Dividend / Divisor = Quotient  
+> Dividend % Divisor = Remainder  
 
 If you have a number expressed as `2` to the power of `n`, you can convert it to hexadecimal by dividing the power `n` by `4` and using the `remainder` as the exponent of `2` multiplied the `quotient` as the exponent of `0x10`.
 
