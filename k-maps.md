@@ -40,7 +40,7 @@ Copy the K-Map into your answer book. Draw the most suitable loops on your map.
 
 | DC\BA | 00    | 01    | 11 | 10 |
 |-------|-------|-------|----|----|
-| 00    | **1** | **1** | 1  |    |
+| 00    | <span style="color:red">1</span> | <span style="color:red">1</span> | 1  |    |
 | 01    | **1** | **1** | 1  | 1  |
 | 11    |       |       | 1  | 1  |
 | 10    |       |       |    |    |
