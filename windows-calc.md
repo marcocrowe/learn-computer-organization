@@ -1,3 +1,4 @@
+
 # Windows Calculator
 
 ## Get $\log_2{x}$
@@ -7,16 +8,16 @@
 
 To get the logarithm of a number e.g. `8` to the base `2` , you can use the following steps:
 
-1. Open the Windows Calculator.
-2. Select the "Scientific" mode from the menu.
+1. Open the Windows Calculator
+2. Select the "Scientific" mode from the menu
 3. Enter the number you want to take the logarithm of i.e. `8`
-4. Press the $\ln$ button.
-5. Press the $\div$ button.
-6. Enter the number `2`.
-7. Press the $\ln$ button.
-8. Press the `=` button.
+4. Press the $\ln$ button
+5. Press the $\div$ button
+6. Enter the number `2`
+7. Press the $\ln$ button
+8. Press the `=` button
 
-The result should be `3` .
+The result should be `3`
 
 ![Get log2 of 8 with Windows Calculator](image/windows-calc/get-log2-of-8-with-windows-calc.gif)
 
