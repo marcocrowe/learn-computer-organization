@@ -38,34 +38,34 @@ Copy the K-Map into your answer book. Draw the most suitable loops on your map.
 
 *Group 1:*
 
-| DC\BA | 00    | 01    | 11 | 10 |
-|-------|-------|-------|----|----|
-| 00    | *1* | *1* | 1  |    |
-| 01    | *1* | *1* | 1  | 1  |
-| 11    |       |       | 1  | 1  |
-| 10    |       |       |    |    |
+| DC\BA | 00  | 01  | 11 | 10 |
+|-------|-----|-----|----|----|
+| 00    | `1` | `1` | 1  |    |
+| 01    | `1` | `1` | 1  | 1  |
+| 11    |     |     | 1  | 1  |
+| 10    |     |     |    |    |
 
 D is 0 and does not change in this group and B is 0 does not change in this group. The equation for this group is $\overline{D}.\overline{B}$.
 
 *Group 2:*
 
-| DC\BA | 00 | 01 | 11    | 10    |
-|-------|----|----|-------|-------|
-| 00    | 1  | 1  | 1     |       |
-| 01    | 1  | 1  | ***1*** | **1** |
-| 11    |    |    | ***1*** | **1** |
-| 10    |    |    |       |       |
+| DC\BA | 00 | 01 | 11  | 10  |
+|-------|----|----|-----|-----|
+| 00    | 1  | 1  | 1   |     |
+| 01    | 1  | 1  | `1` | `1` |
+| 11    |    |    | `1` | `1` |
+| 10    |    |    |     |     |
 
 C is 1 and does not change in this group and B is 1 does not change in this group. The equation for this group is $C.B$
 
 Group 3
 
-| DC\BA | 00 | 01 | 11    | 10 |
-|-------|----|----|-------|----|
-| 00    | 1  | 1  | **1** |    |
-| 01    | 1  | 1  | **1** | 1  |
-| 11    |    |    | 1     | 1  |
-| 10    |    |    |       |    |
+| DC\BA | 00 | 01 | 11  | 10 |
+|-------|----|----|-----|----|
+| 00    | 1  | 1  | `1` |    |
+| 01    | 1  | 1  | `1` | 1  |
+| 11    |    |    | 1   | 1  |
+| 10    |    |    |     |    |
 
 D is 0 and does not change in this group and A and B are 1 and do not change in this group. The equation for this group is $\overline{D}.A.B$
 
