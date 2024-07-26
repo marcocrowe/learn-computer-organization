@@ -1,7 +1,7 @@
 
 # Windows Calculator
 
-## Get $\log_2{x}$
+Get $\log_2{x}$
 
 > The $\ln$ function is used to take the natural logarithm of a number. To get the logarithm of a number to a different base, you can use the following formula:
 > $\log_b{x} = \frac{\ln{x}}{\ln{b}}$.
