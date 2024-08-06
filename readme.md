@@ -9,6 +9,12 @@ This repository contains the notes and resources for the course Computer Organiz
 * [Memory Interleaving - exercises](./memory-interleaving-exercises.md "Memory Interleaving - exercises")
 * [Karnaugh Maps](./k-maps.md "Karnaugh Maps")
 
+## Exam Papers
+
+| Year | Exam Paper | Solutions |
+|------|------------|-----------|
+| 2021 | [Exam Paper](exam-papers/2024-electronic-engineering.md) | [Solutions](exam-papers/2024-electronic-engineering-solution.md) |
+
 ## Tools Used
 
 * [Memory layout diagrams](https://github.com/gerph/memory-layout-diagram "Memory layout diagrams") - A Python tool to visualize memory maps.
