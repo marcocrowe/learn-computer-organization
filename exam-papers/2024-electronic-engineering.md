@@ -273,19 +273,20 @@ The Priority Encoder Function table in Figure one, has data missing. In this ans
 
 **Priority Encoder Inputs**  
 
-| EI | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-|----|--:|--:|--:|--:|--:|--:|--:|--:|
-| H  | X | X | X | X | X | X | X | X |
-| L  | X | H | H | H | H | H | H | H |
-| L  | H | X | X | X | X | X | X |   |
-| L  | X | X | X | X | X | X |   | H |
-| L  | X | X | X | X | X |   | H | H |
-| L  | X | X | X | X |   | H | H | H |
-| L  | X | X | X |   | H | H | H | H |
-| L  | X | X |   | H | H | H | H | H |
-| L  | X |   | H | H | H | H | H | H |
-| L  |   | H | H | H | H | H | H | H |
+| Row # | EI | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|:------|----|--:|--:|--:|--:|--:|--:|--:|--:|
+| 01    | H  | X | X | X | X | X | X | X | X |
+| 02    | L  | X | H | H | H | H | H | H | H |
+| 03    | L  | H | X | X | X | X | X | X |   |
+| 04    | L  | X | X | X | X | X | X |   | H |
+| 05    | L  | X | X | X | X | X |   | H | H |
+| 06    | L  | X | X | X | X |   | H | H | H |
+| 07    | L  | X | X | X |   | H | H | H | H |
+| 08    | L  | X | X |   | H | H | H | H | H |
+| 09    | L  | X |   | H | H | H | H | H | H |
+| 10    | L  |   | H | H | H | H | H | H | H |
 
+Figure 4 - Priority Encoder Function Table (Data Missing)
 
 #### Answer 3.4
 
@@ -293,18 +294,40 @@ The Priority Encoder Function table in Figure one, has data missing. In this ans
 
 **Priority Encoder Inputs**  
 
-| EI |   0 |   1 |   2 | 3 |   4 |   5 |   6 |   7 |
-|----|----:|----:|----:|--:|----:|----:|----:|----:|
-| H  |   X |   X |   X | X |   X |   X |   X |   X |
-| L  |   X |   H |   H | H |   H |   H |   H |   H |
-| L  |   H |   X |   X | X |   X |   X |   X | `H` |
-| L  |   X |   H |   X | X |   X |   X | `H` |   H |
-| L  |   X |   X |   H | X |   X | `H` |   H |   H |
-| L  |   X |   X |   X | H | `H` |   H |   H |   H |
-| L  |   X |   X |   X | X |   H |   H |   H |   H |
-| L  |   X |   X | `H` | H |   H |   H |   H |   H |
-| L  |   X | `H` |   H | H |   H |   H |   H |   H |
-| L  | `H` |   H |   H | H |   H |   H |   H |   H |
+| Row # | EI |   0 |   1 |   2 |   3 |   4 |   5 |   6 |   7 |
+|:------|----|----:|----:|----:|----:|----:|----:|----:|----:|
+| 01    | H  |   X |   X |   X |   X |   X |   X |   X |   X |
+| 02    | L  |   X |   H |   H |   H |   H |   H |   H |   H |
+| 03    | L  |   H |   X |   X |   X |   X |   X |   X | `L` |
+| 04    | L  |   X |   H |   X |   X |   X |   X | `L` |   H |
+| 05    | L  |   X |   X |   H |   X |   X | `L` |   H |   H |
+| 06    | L  |   X |   X |   X |   H | `L` |   H |   H |   H |
+| 07    | L  |   X |   X |   X | `L` |   H |   H |   H |   H |
+| 08    | L  |   X |   X | `L` |   H |   H |   H |   H |   H |
+| 09    | L  |   X | `L` |   H |   H |   H |   H |   H |   H |
+| 10    | L  | `L` |   H |   H |   H |   H |   H |   H |   H |
+
+You are correct. In a priority encoder, if a higher-order input is active, the lower-order inputs are indeed "don't care" (X). Let's correct the table accordingly:
+
+Corrected Rows 3 and 4
+Row # | EI | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
+--- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+03 | L | H | X | X | X | X | X | X | X
+04 | L | X | H | X | X | X | X | X | H
+Explanation
+Row 3
+EI (Enable Input): L (Low) - The encoder is enabled.
+0: H (High) - Input 0 is active.
+1 to 7: X (Don't Care) - These inputs can be either 0 or 1, but they do not affect the output because input 0 has the highest priority.
+Row 4
+EI (Enable Input): L (Low) - The encoder is enabled.
+0: X (Don't Care) - This input can be either 0 or 1, but it does not affect the output because input 1 has a higher priority.
+1: H (High) - Input 1 is active.
+2 to 6: X (Don't Care) - These inputs can be either 0 or 1, but they do not affect the output because input 1 has the highest priority.
+7: H (High) - Input 7 is active, but since input 1 has a higher priority, input 7 is ignored.
+Summary
+Row 3: Input 0 is active and has the highest priority, so all other inputs are "don't care" (X).
+Row 4: Input 1 is active and has the highest priority, so all other inputs are "don't care" (X), even though input 7 is also active.
 
 ### Question 3.5 (1 marks)
 
