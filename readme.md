@@ -11,8 +11,8 @@ This repository contains the notes and resources for the course Computer Organiz
 
 ## Exam Papers
 
-| Year | Exam Paper | Solutions |
-|------|------------|-----------|
+| Year | Exam Paper                                               | Solutions                                                        |
+|------|----------------------------------------------------------|------------------------------------------------------------------|
 | 2021 | [Exam Paper](exam-papers/2024-electronic-engineering.md) | [Solutions](exam-papers/2024-electronic-engineering-solution.md) |
 
 ## Tools Used
