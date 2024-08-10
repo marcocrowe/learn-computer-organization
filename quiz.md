@@ -14,7 +14,6 @@ A mix of multiple-choice and short-answer questions covering the key topics from
 
 ### Question 1 Answer
 
-
 1. **Sequential Logic** : In a sequential circuit, the output depends on:
         - A. Only the current input
         - B. Only the previous input

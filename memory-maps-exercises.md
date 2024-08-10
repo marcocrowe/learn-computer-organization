@@ -2,14 +2,18 @@
 
 A collection of exercises and solutions to help you practice creating memory maps.
 
+## Note
+
+To rewrite a number x as a power of 2, $x = 2^y$, you can use the following formula: $y = log_2(x)$, $x= 2^{\log_2(x)}$
+
 ## Example 1
 
 Create a Memory Map for a system with 2GB capacity. Assume the system has 3 x 32MB memory modules residing at the bottom of memory.
 
 ### Calculate full address range
 
-$2 \text{ GB} = 2 * \text{GB} =  2 * 2^{30} = 2^{log_2(2)} * 2^{30} = 2^1 * 2^{30} = 2^{31}.$
-This means that we need 31 address lines.
+$2 \text{ GB} = 2 * \text{GB} =  2 * 2^{30} = 2^1 + 2^{30} = 2^{(1 + 30)} = 2^{31}.$
+The power is 31. This means that we need 31 address lines.
 
 $2^{31} = 2, 147, 483, 648_{10} = \text{0x8000 0000}$
 
@@ -95,7 +99,6 @@ Each module is 256MB. $256 * 1\text{ MB} = 2^{log_2(256)} * 2^{20} = 2^8 * 2^{20
 
 ### Module 1
 
-$2^{28} = 268, 435, 456_{10} = \text{0x1000 0000}$
 $2^{28} = 268, 435, 456_{10} = \text{0x1000 0000}$
 
 |   | start         | end           |                                        |

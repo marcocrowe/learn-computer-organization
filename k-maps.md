@@ -76,6 +76,60 @@ $\overline{D}.\overline{B} + C.B + \overline{D}.A.B$
 
 [6 Marks]
 
+## Question 2.D
+
+Use a 3 variable K-map to minimise the following function :-
+
+$F = C.B.A + C.\overline{B}.A + C.\overline{B}.\overline{A} + \overline{C}.B.A + \overline{C}.\overline{B}.A$
+
+Rewrite the function with varaibles in alphabetical order.
+
+$F = A.B.C + A.\overline{B}.C + \overline{A}.\overline{B}.C + A.B.\overline{C} + A.\overline{B}.\overline{C}$
+
+| AB/C | 0                             | 1                             |
+|------|-------------------------------|-------------------------------|
+| 00   |                               | $\overline{A}.\overline{B}.C$ |
+| 01   |                               |                               |
+| 10   | $A.\overline{B}.\overline{C}$ | $A.\overline{B}.C $           |
+| 11   | $A.B.\overline{C}$            | $A.B.C$                       |
+
+| AB/C | 0 | 1 |
+|------|---|---|
+| 00   |   | 1 |
+| 01   |   |   |
+| 10   | 1 | 1 |
+| 11   | 1 | 1 |
+
+
+Group 1:
+
+| AB/C | 0   | 1   |
+|------|-----|-----|
+| 00   |     | 1   |
+| 01   |     |     |
+| 10   | `1` | `1` |
+| 11   | `1` | `1` |
+
+So `A` is 1 and does not change in this group. The equation for this group is $A$
+
+Group 2:
+
+| AB/C | 0 | 1   |
+|------|---|-----|
+| 00   |   | `1` |
+| 01   |   |     |
+| 10   | 1 | 1   |
+| 11   | 1 | 1   |
+
+So `A`, `B`  are 0 and do not change in this group, and `C` is 1 and does not change in this group. The equation for this group is $\overline{A}.\overline{B}.C$
+
+So combining the two groups we get the minimized equation as:
+
+$$\boxed{F = A + \overline{A}.\overline{B}.C}$$
+
+
+## Alt 3
+
 Q 2(d)
 Use a 3 variable K-map to minimise the following function :-
 
@@ -87,3 +141,7 @@ $F = C.B.A + C.\overline{B}.A + C.\overline{B}.\overline{A} + \overline{C}.B.A +
 | 1    | 1  | 1  |    | 1  |
 
 $F = BA + \overline{B}.A+ C.\overline{B}$
+
+$F = BA + \overline{B}.A+ C.\overline{B}$
+$ F = A(B + \overline{B}) + C.\overline{B}$
+$ F = A + C.\overline{B}$
