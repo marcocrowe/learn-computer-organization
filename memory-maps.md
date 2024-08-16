@@ -50,7 +50,10 @@ $2^{10} = 2^2 * 2^4 * 2^4 = 2^2 * (2^4)^{2} = 4 * \text{0x10}^2 = 4 * \text{0x10
 
 Now using the quick trick:
 
-For $2^{10} \\ q = 10/4 = 2 \\ r = 10 \mod 2 = 2 \\ 2^r * \text{0x10}^q = 2^2 * \text{0x10}^2 =  4 * \text{0x10}^2 = 4 * \text{0x100}= \text{0x400}$
+For $2^{10}$  
+$q = 10/4 = 2$  
+$r = 10\%4 = 2$
+$2^r * \text{0x10}^q = 2^2 * \text{0x10}^2 =  4 * \text{0x10}^2 = 4 * \text{0x100}= \text{0x400}$
 
 ### Example 2: What is $2^{18}$  expressed in hexadecimal?
 
