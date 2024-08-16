@@ -64,7 +64,7 @@ Now using the quick trick:
 For $2^{18}$  
 $q = 18/4 = 4$  
 $r = 18 \mod 4 = 2$  
-$2^r * \text{0x10}^q = 2^2 * \text{0x10}^4 =  4 * \text{0x10}^4 = 4 * \text{0x1000}= \text{0x4000}$
+$2^r * \text{0x10}^q = 2^2 * \text{0x10}^4 =  4 * \text{0x10}^4 = 4 * \text{0x1\ 0000}= \text{0x4\ 0000}$
 
 Example3: What is $2^{25}$ expressed in hexadecimal?
 
